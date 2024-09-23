@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { Suspense } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Form from '@components/Form'
@@ -54,6 +55,7 @@ const EditPrompt = () => {
          }
     }
   return (
+    <Suspense>
     <div>
       <Form
       type= 'Edit'
@@ -63,6 +65,7 @@ const EditPrompt = () => {
       handleSubmit={updatePrompt}
       />
     </div>
+    </Suspense>
   )
 }
 
